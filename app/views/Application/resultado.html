@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'Resultado' /}
+
+
+
+
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+
+        <h1 class="mt-5">Periodos de Férias</h1>
+
+        #{informacoes_gerais /}
+
+        #{mensagem /}
+
+
+        <table class="table table-bordered">
+            <legend>Resultado</legend>
+            <thead>
+
+                <tr>
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Quantiade de Dias</th>
+                    <th>Quantiade de Dias NÃO ÚTEIS</th>
+                </tr>
+            </thead>
+            <tbody>
+                #{list items:parcelasFerias, as: 'parcela' }
+                    <tr>
+                        <td>${parcela?.inicio?.format('dd/MM/yyyy', 'pt')}</td>
+                        <td>${parcela?.fim?.format('dd/MM/yyyy', 'pt')}</td>
+                        <td>${parcela?.getDiasPeriodo()}</td>
+                        <td>${parcela?.qtdeDiasNaoUteis}</td>
+                    </tr>
+                #{/list}
+
+            </tbody>
+
+        </table>
+
+        <a href="@{index()}"><-- Voltar</a>
+
+    </div>
+</main>

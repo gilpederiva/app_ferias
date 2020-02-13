@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Início' /}
+
+
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+
+        <h1 class="mt-5">Periodos de Férias</h1>
+
+        #{informacoes_gerais /}
+
+        #{mensagem /}
+
+        #{form @resultado()}
+
+            <div class="form-group">
+                <label for="ano">Ano</label>
+                <input type="text" name="ano" id="ano" class="form-control" size="6" style="width:100px"/>
+                <small id="anoHelp" class="form-text text-muted">Informe o ano do período de férias</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary" >Gerar</button>
+
+        #{/form}
+
+    </div>
+</main>

@@ -1,0 +1,7 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> docviewer
+    - com.google.code.gson -> gson 2.8.6
+    - org.apache.commons -> commons-lang3 3.9
